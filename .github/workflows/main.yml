@@ -145,10 +145,9 @@ jobs:
       - name: Force qmake UGlobalHotkey
         shell: cmd
         run: |
-          set QTBIN=%Qt6_DIR%\bin
-          "%QTBIN%\qmake.exe" -r SandboxiePlus\UGlobalHotkey\UGlobalHotkey.pro
-
-
+          set QTPATH=%GITHUB_WORKSPACE%\Qt\6.8.3\msvc2022_64\bin
+          "%QTPATH%\qmake.exe" -r SandboxiePlus\UGlobalHotkey\UGlobalHotkey.pro
+          
       - name: Build Sandboxie-Plus x64
         run: SandboxiePlus\qmake_plus.cmd x64 build_qt6
 
